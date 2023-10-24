@@ -231,7 +231,7 @@ public class Request extends javax.swing.JFrame {
         
             // TODO add your handling code here:
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dormitorymanagement", "root", "");
-            stmt = conn.prepareStatement("Insert into requests(roomNumber,floorNumber,blockNumber,request) values(?,?,?,?)");
+                stmt = conn.prepareStatement("Insert into requests(roomNumber,floorNumber,blockNumber,request) values(?,?,?,?)");
             stmt.setInt(1, room);
             stmt.setInt(2,floor);
             stmt.setInt(3, block);

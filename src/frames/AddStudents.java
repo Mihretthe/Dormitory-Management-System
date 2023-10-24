@@ -50,7 +50,7 @@ public final class AddStudents extends javax.swing.JFrame {
         if(female.isSelected()){
         int room,floor,block;
         Statement sta=conn.createStatement();
-             ResultSet rs=sta.executeQuery("SELECT ROW_NUMBER() OVER (ORDER BY batchyear, department, idnumber) AS row_number, femalestudents.* FROM femalestudents ORDER BY batchyear, department, idnumber;");
+             ResultSet rs=sta.executeQuery("SELECT ROW_NUMBER() OVER (ORDER BY batchyear, department, idnumber) AS `row_number`, femalestudents.* FROM femalestudents ORDER BY batchyear, department, idnumber;");
              int c;
              while(rs.next()){
                  c=rs.getInt("row_number")-1;
@@ -70,7 +70,7 @@ public final class AddStudents extends javax.swing.JFrame {
         }else{
         int room,floor,block;
         Statement sta=conn.createStatement();
-             ResultSet rs=sta.executeQuery("SELECT ROW_NUMBER() OVER (ORDER BY batchyear, department, idnumber) AS row_number, malestudents.* FROM malestudents ORDER BY batchyear, department, idnumber;");
+             ResultSet rs=sta.executeQuery("SELECT ROW_NUMBER() OVER (ORDER BY batchyear, department, idnumber) AS `row_number`, malestudents.* FROM malestudents ORDER BY batchyear, department, idnumber;");
              int c;
              while(rs.next()){
                  c=rs.getInt("row_number")-1;
@@ -655,7 +655,7 @@ public final class AddStudents extends javax.swing.JFrame {
                 try{
 
                     conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/dormitoryManagement","root","");
-                    stmt=conn.prepareStatement("Insert into malestudents values(?,?,?,?,?,?,?,?,?) ");
+                    stmt=conn.prepareStatement("Insert into malestudents (idnumber,firstname,lastname,department,batchyear,gender,roomnumber,floornumber,blocknumber) values(?,?,?,?,?,?,?,?,?) ");
                     stmt.setString(1, idnum);
                     stmt.setString(2, firstname);
                     stmt.setString(3, lastname);
