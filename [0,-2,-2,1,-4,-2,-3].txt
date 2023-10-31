@@ -1,17 +1,1 @@
-[0,-2,-2,1,-4,-2,-3]
-the sum range [0,2]
-left = 0
-right = 2+1
-so the sum = prefix[right] - prefix[left]
-	   = 1 - 0
-	   = 1
-the sum range [2,5]
-sum = prefix[6] - prefix[2]
-    = -3 - (-2)
-    = -1
-the sum range [0,5]
-sum = prefix[6] - prefix[0]
-    = -3 - 0
-    = -3
 
-			
